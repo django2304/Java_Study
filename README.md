@@ -1,5 +1,5 @@
 # Java_Study
 ***
-## Intro To Java
+Intro To Java
 ***
-### Variables and Data Types
+Variables and Data Types
