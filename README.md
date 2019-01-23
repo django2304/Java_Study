@@ -83,13 +83,13 @@ public void greetings (String location, double time) {
 }
 ```
 **Return Value**
-void
-int
-String
-double
-char
-boolean
-long
+1. void
+2. int
+3. String
+4. double
+5. char
+6. boolean
+7. long
 
 **Random Numbers**
 ```java
@@ -102,3 +102,13 @@ double randomNumber = Math.random() * 10;
 double randomInt = (int) randomNumber;
 ```
 ### Loops
+**While Loops**
+```java
+public void alarm () {
+    boolean on = checkAlarm();
+    while (on) {
+        beep();
+        on = checkAlarm();
+    }
+}
+```
