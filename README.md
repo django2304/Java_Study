@@ -112,3 +112,59 @@ public void alarm () {
     }
 }
 ```
+**For Loops**
+```java
+public void raiseAlarm(int numOfWarnings){
+    for(int i = 1; i <= numOfWarnings; i++){
+        System.out.println("Warning # " + i);
+    }
+}
+```
+**Break**
+```java
+/**
+*WiFi search
+*/
+public void searchWifi(){
+    for(int i = 1; i <= 10; i++){
+        boolean wifiAvailable = ckeckWifi();
+        if (wifiAvailable){
+            System.out.println("Wifi found");
+            break;
+        }
+    }
+}
+```
+```java
+public int martingale() {
+    int money = 1000;
+    int target = 1200;
+    int bet = 10;
+    while (money > bet) {
+        boolean win = play();
+        if (win) {
+            money += bet;
+            bet = 10;
+        } 
+        else {
+            money -= bet;
+            bet *= 2;
+        }
+        if (money==target)
+            break;
+    }
+    return money;
+}
+```
+**Arrays**
+```java
+public double calculateAverage(double [] temperatures){
+    int size = temperatures.length;
+    double total = 0;
+    for(int i = 0; i < size; i++){
+        total += temperatures[i];
+    }
+    double average = total / size;
+    return average;
+}
+```
