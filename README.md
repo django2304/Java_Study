@@ -168,3 +168,58 @@ public double calculateAverage(double [] temperatures){
     return average;
 }
 ```
+## Object Oriented Programming in Java
+### The World of Objects
+**Creating Main class and method**
+```java
+public class Main {
+
+    public static void main(String[] args) {
+	System.out.println("Hello world!");
+    }
+}
+```
+**Constructors**
+```java
+class Game{
+   ...
+   // Constructor
+   Game(){
+      // Initialization code goes here
+   }
+   ...
+}
+```
+**Parameterized constructors**
+```java
+class Game{
+   int score;
+   // Default constructor
+   Game(){
+      score = 0;
+   }
+   // Constructor by starting score value
+   Game(int startingScore){
+      score = startingScore;
+   }
+}
+```
+**Accessing a constructor**
+```java
+Game tetris = new Game();
+Game darts = new Game(501);
+Game darts = null;
+```
+**Self Reference**
+```java
+class Position {
+   int row = 0;
+   int column = 0;
+
+    //constructor
+   Position(int row, int column) {
+      this.row = row;
+      this.column = column;
+   }
+}
+```
