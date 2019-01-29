@@ -223,3 +223,82 @@ class Position {
    }
 }
 ```
+**Fields (public vs private)**
+```java
+public class Book{
+   private String title;
+   private String author;
+   private boolean isBorrowed;
+   public Book(String title, String author){
+      this.title = title;
+      this.author = author;
+   }
+   public void borrowBook(){
+      isBorrowed = true;
+   }
+   public void returnBook(){
+      isBorrowed = false;
+   }
+   public boolean isBookBorrowed(){
+      return isBorrowed;
+   }
+}
+```
+**Methods (public vs private)**
+```java
+class Person{
+   private String userName;
+   private String SSN;
+   private String getId(){
+      return SSN + "-" + userName;
+   }
+   public String getUserName(){
+      return userName;
+   }
+   public boolean isSamePerson(Person p){
+      if(p.getId().equals(this.getId()){
+         return true;
+      }
+      else{
+         return false;
+      } 
+   }
+}
+```
+### User Interection
+**Input Scanner**
+Line
+```java
+System.out.println("Enter your address: ");
+Scanner scanner = new Scanner(System.in);
+String address = scanner.nextLine();
+System.out.println("You live at: " + address);
+```
+Integer
+```java
+System.out.println("Enter your grade: ");
+Scanner scanner = new Scanner(System.in);
+int grade = scanner.nextInt();
+if(grade > 90){
+	System.out.println("Wow! you did well!");
+}
+else{
+	System.out.println("Not bad, but you can do better next time!");
+}
+```
+**File Scanner**
+```java
+File file = new File("expenses.txt");
+Scanner fileScanner = new Scanner(file);
+```
+**Exceptions**
+```java
+try{
+	openFile("somefile.txt");
+	array[index]++;
+} catch(FileNotFoundException exception) {
+	// Handle all the possible file-not-found-related issues here
+} catch(IndexOutOfBoundsException exception) {
+	// Handle all the possible index-out-of-bounds-related issues here
+} 
+```
