@@ -302,3 +302,21 @@ try{
 	// Handle all the possible index-out-of-bounds-related issues here
 } 
 ```
+### Inheritance
+**Inheritance**
+```java
+class BankAccount {
+	String account;
+	int balance;
+}
+class CheckingAccount extends BankAccount {
+	int limit;
+}
+class SavingsAccount extends BankAccount {
+	int transfers;
+}
+class COD extends BankAccount {
+	Date expiry;
+}
+```
+**Polymorphism**
