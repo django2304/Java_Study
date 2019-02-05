@@ -319,4 +319,170 @@ class COD extends BankAccount {
 	Date expiry;
 }
 ```
-**Polymorphism**
+**Polymorphism and Overriding**
+```java
+public class Dancer {
+    private String name;
+    private int age;
+
+    public Dancer(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void dance() {
+        System.out.println(toString() + "Я танцую как все.");
+    }
+
+    @Override
+    public String toString() {
+        return "Я " + name + ", мне " + age + " лет. " ;
+    }
+}
+
+public class ElectricBoogieDancer extends Dancer {
+    public ElectricBoogieDancer(String name, int age) {
+        super(name, age);
+    }
+// переопределение метода базового класса
+    @Override
+    public void dance() {
+        System.out.println( toString() + "Я танцую электрик буги!");
+    }
+}
+
+public class BreakDankDancer extends Dancer{
+
+    public BreakDankDancer(String name, int age) {
+        super(name, age);
+    }
+// переопределение метода базового класса
+    @Override
+    public void dance(){
+        System.out.println(toString() + "Я танцую брейк-данс!");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Dancer dancer = new Dancer("Антон", 18);
+
+        Dancer breakDanceDancer = new BreakDankDancer("Алексей", 19);// восходящее преобразование к базовому типу
+        Dancer electricBoogieDancer = new ElectricBoogieDancer("Игорь", 20); // восходящее преобразование к базовому типу
+
+        List<Dancer> discotheque = Arrays.asList(dancer, breakDanceDancer, electricBoogieDancer);
+        for (Dancer d : discotheque) {
+            d.dance();// полиморфный вызов метода
+        }
+    }
+}
+```
+**Interfaces**
+```java
+public interface Swim {
+    void swim();
+}
+
+public class Human implements Swim {
+    private String name;
+    private int age;
+
+    public Human(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public void swim() {
+        System.out.println(toString()+" Я плаваю с помощью надувного круга.");
+    }
+
+    @Override
+    public String toString() {
+        return "Я " + name + ", мне " + age + " лет. ";
+    }
+
+}
+
+public class Fish implements Swim{
+    private String name;
+
+    public Fish(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("Я рыба " + name + ". Я плыву, двигая плавниками.");
+
+    }
+
+public class UBoat implements Swim {
+
+    private int speed;
+
+    public UBoat(int speed) {
+        this.speed = speed;
+    }
+
+    @Override
+    public void swim() {
+        System.out.println("Подводная лодка плывет, вращая винты, со скоростью " + speed + " узлов.");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Swim human = new Human("Антон", 6);
+        Swim fish = new Fish("кит");
+        Swim boat = new UBoat(25);
+
+        List swimmers = Arrays.asList(human, fish, boat);
+        for (Swim s : swimmers) {
+            s.swim();
+        }
+    }
+}
+```
+**Comparable Interface**
+```java
+public class Book implements Comparable<Book>{
+   public int compareTo(Book specifiedBook) {
+      // First check if they have different page counts
+      if(this.numberOfPages != specifiedBook.numberOfPages){
+         // this will return a negative value if this < specified but will return a positive value if this > specified
+         return this.numberOfPages - specifiedBook.numberOfPages;
+      }
+      // If page counts are identical then check if the titles are different
+      if(!this.title.equals(specifiedBook.title){
+         return this.title.compareTo(specifiedBook.title);
+      }
+      // If page titles are also identical then return the comparison of the authors
+      return this.author.compareTo(specifiedBook.author);
+    }
+}
+```
+**Final Methods**
+```java
+public class Room{
+   private double width;
+   private double height;
+   public Room(double width, double height){
+      this.width = width;
+      this.height =height;
+   }
+   public final double getArea(){
+      return width*height;
+   }
+}
+
+public class LivingRoom extends Room{
+   // The constructor simply calls the parent's constructor using super()
+   public LivingRoom(double width, double height){
+        super(width,height);
+    }
+   // Not allowed to override getArea() here
+}
+```
