@@ -486,3 +486,88 @@ public class LivingRoom extends Room{
    // Not allowed to override getArea() here
 }
 ```
+### Collections
+**Lists**
+```java
+ArrayList grades = new ArrayList();
+grades.add(100);
+grades.add(97);
+grades.add(85);
+grades.get(0);
+System.out.println(grades.size().toString());
+grades.remove(0);
+grades.clear();
+```
+**Loops and Collections**
+```java
+// First get the size of the array list
+int size = list.size();
+// Start the loop
+for(int i=0; i<size; i++){
+   System.out.println(list.get(i));
+}
+for (String item : list) {
+   System.out.println(item);
+}
+```
+add(E element): Appends the specified element to the end of this list.
+add(int index, E element): Appends the specified element to the specified index of this list.
+get(int index): Returns the element at the specified position in this list.
+contains(Object o): Returns true if this list contains the specified element.
+remove(int index): Removes the element at the specified position in this list.
+size(): Returns the number of elements in the list.
+**Stacks**
+```java
+Stack newsFeed = new Stack();
+newsFeed.push("Morning news");
+newsFeed.push("Afternoon news");
+newsFeed.push("Evening news");
+String breakingNews = (String) newsFeed.pop();
+System.out.println(breakingNews);
+```
+push(E item): Adds an item onto the top of this stack
+pop(): Removes the object at the top of this stack and returns that object
+peek(): Returns the object at the top without removing it from the stack.
+empty(): Checks if this stack is empty.
+search(Object o): Searches for an object in this stack and returns its position.
+**Queue**
+```java
+Queue orders = new LinkedList();
+orders.add("Order1");
+orders.add("Order2");
+orders.add("Order3");
+System.out.print(orders.poll());
+System.out.print(orders.poll());
+System.out.print(orders.poll());
+```
+add(E element): Inserts the specified element into this queue
+poll(): Retrieves and removes the head of this queue
+
+addFirst(E element): Inserts the specified element at the front of this deque
+addLast(E element): Inserts the specified element at the end of this deque
+pollFirst(): Retrieves and removes the first element of this deque
+pollLast(): Retrieves and removes the last element of this deque
+**Generics**
+```java
+ArrayList<String> listOfStrings = new ArrayList();
+```
+**HashMaps**
+```java
+public class Book{
+   String title;
+   String author;
+   int numOfPages;
+   int publishedYear;
+   int edition;
+   String ISBN;
+}
+
+public class Library{
+   HashMap<String, Book> allBooks = new HashMap<String, Book>();
+   Book taleOfTwoCities = new Book();
+   allBooks.put("9781539687399", taleOfTwoCities);
+   Book findBookByISBN(String isbn){
+   Book book = allBooks.get(isbn);
+   return book;
+}
+```
