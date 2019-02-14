@@ -9,6 +9,7 @@ Chance of launch explosion = 5% * (cargo carried / cargo limit)
 Chance of landing crash = 1% * (cargo carried / cargo limit)`
 
 **U2**
+
 `Rocket cost = $120 Million
 Rocket weight = 18 Tonnes
 Max weight (with cargo) = 29 Tonnes
