@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class U1 extend Rocket {
+public class U1 extends Rocket {
   
   private Random random = new Random();
   private double chance = random.nextDouble();
