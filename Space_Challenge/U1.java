@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class U1 extend Rocket {
   
   private Random random = new Random();
